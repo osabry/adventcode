@@ -27,6 +27,8 @@ public class day_1_part_1 {
 
     }
 
+    // this is the new line for test
+
     private static Integer getValues(String myLine) {
         int result = 0;
         for ( int i = 0 ; i < myLine.length(); i++) {
