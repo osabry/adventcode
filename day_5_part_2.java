@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class day_5_part_1 {
+public class day_5_part_2 {
     public static void main(String[] args) {
 
         int sumMedian = 0;
@@ -79,10 +79,26 @@ public class day_5_part_1 {
                 pages[i] = Integer.parseInt(updateList[i]);
                 if(i == ( updateList.length - 1) / 2) middleNumber =  pages[i] ;
             }
-            
+            // System.out.println(str + " -> " + (isValid ? "Valid order" + ", middle is : " + middleNumber : "Invalid order") );
             boolean isValid = checkOrder(pages, rule);
-            if ( isValid ) sumMedian += middleNumber ;
-            System.out.println(str + " -> " + (isValid ? "Valid order" + ", middle is : " + middleNumber : "Invalid order") );
+            if ( !isValid ) {
+                System.out.print(str + " -> is Invalid order corrected to -> ");
+                pages = correctOrder(pages, rule);
+                if(checkOrder(pages, rule) ) { 
+                    String message = "";
+                    for (int i = 0; i < pages.length; i++) {
+                        message += pages[i] + ",";
+                        if(i == ( pages.length - 1) / 2) middleNumber =  pages[i] ;
+                    }
+
+                    System.out.println(message + ", middle is : " + middleNumber );
+                    
+                    // middleNumber =  pages[(pages.length-1)/2] ;
+                }
+                sumMedian += middleNumber ;
+                // System.out.println(str + " -> " + (isValid ? "Valid order" + ", middle is : " + middleNumber : "Invalid order") );
+            }
+            
         }
 
         // for (int i = 0; i < rule.length ; i++) {
@@ -93,7 +109,7 @@ public class day_5_part_1 {
         
     }
 
-             
+              
     private static boolean checkOrder(int[] pages, int[][] rules) {
         // Check each pair of pages against the rules
         for (int i = 0; i < pages.length; i++) {
@@ -113,6 +129,27 @@ public class day_5_part_1 {
         return true;
     }
 
+
+    private static int[] correctOrder(int[] pages, int[][] rules) {
+        // Check each pair of pages against the rules
+        for (int i = 0; i < pages.length; i++) {
+            for (int j = i + 1; j < pages.length; j++) {
+                int page1 = pages[i];
+                int page2 = pages[j];
+                
+                // Check if there's a rule requiring the opposite order
+                for (int[] rule : rules) {
+                    if (rule[0] == page2 && rule[1] == page1) {
+                        pages[i] = page2 ;
+                        pages[j] = page1;
+                    }
+                }
+            }
+        }
+        return pages;
+    }
+
+
 }
 
 
@@ -122,3 +159,4 @@ public class day_5_part_1 {
 
 
 //   Day_5 part 1 : Your puzzle answer was 6505.   is correct 
+//   day_5 part_2   :   completed --------total found 6897   is correct   
