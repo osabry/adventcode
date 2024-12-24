@@ -118,24 +118,24 @@ public class day_6_part_1 {
     }
 
              
-    private static boolean checkOrder(int[] pages, int[][] rules) {
-        // Check each pair of pages against the rules
-        for (int i = 0; i < pages.length; i++) {
-            for (int j = i + 1; j < pages.length; j++) {
-                int page1 = pages[i];
-                int page2 = pages[j];
+    // private static boolean checkOrder(int[] pages, int[][] rules) {
+    //     // Check each pair of pages against the rules
+    //     for (int i = 0; i < pages.length; i++) {
+    //         for (int j = i + 1; j < pages.length; j++) {
+    //             int page1 = pages[i];
+    //             int page2 = pages[j];
                 
-                // Check if there's a rule requiring the opposite order
-                for (int[] rule : rules) {
-                    if (rule[0] == page2 && rule[1] == page1) {
-                        // Found a rule violation - page2 should come before page1
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
+    //             // Check if there's a rule requiring the opposite order
+    //             for (int[] rule : rules) {
+    //                 if (rule[0] == page2 && rule[1] == page1) {
+    //                     // Found a rule violation - page2 should come before page1
+    //                     return false;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 
 }
 

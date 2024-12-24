@@ -12,8 +12,8 @@ public class day_4_part_2 {
         List<xmasPoints> xmasPoints = new ArrayList<>();
         String fileName = "inputs/day_4.txt";
         // fileName = "inputs/test.txt";
-        String xmas = "MAS";
-        long totalXmas = 0;
+        // String xmas = "MAS";
+        // long totalXmas = 0;
         int lineCount = 0;
         int rowCount = 0;
 

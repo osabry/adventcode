@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.sql.rowset.spi.SyncResolver;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 public class day_4_part_1 {
     public static void main(String[] args) {
 
@@ -15,8 +12,8 @@ public class day_4_part_1 {
         List<xmasPoints> xmasPoints = new ArrayList<>();
         String fileName = "inputs/day_4.txt";
         // fileName = "inputs/test.txt";
-        String xmas = "XMAS";
-        long totalXmas = 0;
+        // String xmas = "XMAS";
+        // long totalXmas = 0;
         int lineCount = 0;
         int rowCount = 0;
 

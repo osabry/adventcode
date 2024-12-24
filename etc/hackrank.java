@@ -1,7 +1,4 @@
 package etc;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class hackrank {
     public static void main(String[] args) {

@@ -20,7 +20,6 @@ public class day_3_part_1 {
                     String sub_str="";
                     int display_length = ( sb.length() < 40 ) ? sb.length() : 40 ;
                     System.out.println("======before delete =========== " + sb.substring(0,display_length));
-                    String deleted_message = sb.substring(0,sb.indexOf("mul(") + 4 );
                     sb.delete(0,sb.indexOf("mul(")+4);
 
                     
